@@ -1,2 +1,3 @@
 # HelpPets-Backend
-Back-End do TCC HelpPets. Pasta da aplicação completa será futuramente adicionada
+Back-End do TCC HelpPets. 
+Pasta da aplicação completa será futuramente adicionada, quando criarmos a organização.

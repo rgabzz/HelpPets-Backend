@@ -1,0 +1,22 @@
+/register
+
+json precisa vir assim do flutter ->
+
+{
+  "nome": "xx",
+  "sobrenome": "xx",
+  "genero": "xx",
+  "nascimento": "2005-08-21",
+  "cpf": "000.000.000-00",
+  "telefone": "88999999999",
+  "estado": "CE",
+  "cidade": "Apodi",
+  "email": "email@email.com",
+  "senha": "12345678"
+}
+
+mensagem de sucesso:{'sucess': 'Usuário Registrado com Sucesso!'}
+
+erros:
+{'error': 'Nenhum campo foi preenchido'}{'error': 'Campos não preenchidos completamente'}
+{'error': 'Email já cadastrado'}
