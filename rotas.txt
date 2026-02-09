@@ -1,7 +1,6 @@
-/register
+/register POST
 
-json precisa vir assim do flutter ->
-
+JSON esperado (Flutter → Flask)
 {
   "nome": "xx",
   "sobrenome": "xx",
@@ -15,8 +14,56 @@ json precisa vir assim do flutter ->
   "senha": "12345678"
 }
 
-mensagem de sucesso:{'sucess': 'Usuário Registrado com Sucesso!'}
+mensagem de sucesso: \
+{
+  'sucess': 'Usuário Registrado com Sucesso!'
+}
 
-erros:
-{'error': 'Nenhum campo foi preenchido'}{'error': 'Campos não preenchidos completamente'}
+Erros possíveis:
+{'error': 'Nenhum campo foi preenchido'}
+{'error': 'Campos não preenchidos completamente'}
 {'error': 'Email já cadastrado'}
+
+
+
+
+/login POST
+
+Se lembre de salvar o token para o usuario conseguir acessar as rotas dele. Quem lida com o logout do usuario é o front-end, simplesmente apagando o token que estava salvo
+JSON esperado
+{
+  "email": "email@email.com",
+  "senha": "12345678"
+}
+
+mensagem de sucesso:
+{
+  "access_token": "jwt_token_aqui",
+  "Sucess": "Usuario Logado com Sucesso!"
+}
+
+Erros possíveis
+{ "error": "Nenhum campo foi preenchido" }
+{ "error": "Campos não preenchidos completamente" }
+{ "error": "Credenciais inválidas" }
+{ "error": "Conta desativada pelos desenvolvedores" }
+
+
+
+
+
+/me GET // É uma rota protegida, ou seja, so acessa se tiver o token, guarde ele! 
+
+Header obrigatório (Flutter → Flask)
+Authorization: Bearer SEU_TOKEN_JWT
+
+mensagem de sucesso:
+{
+  "nome": "Nome Sobrenome",
+  "email": "email@email.com",
+  "cargo": "admin" #-> pode ser, admin, ong ou usuario
+}
+
+Erros possíveis
+{'error': 'Usuário não encontrado'}
+{ "msg": "Missing Authorization Header" }
