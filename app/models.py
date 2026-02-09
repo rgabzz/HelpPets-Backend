@@ -9,7 +9,7 @@ class Cargo(enum.Enum):
     ADMIN = 'admin'
 
 
-class Usuario(UserMixin, db.Model):
+class Usuarios(UserMixin, db.Model):
     __tablename__ = 'usuarios' 
     id = db.Column(Integer(), primary_key=True) 
     nome = db.Column(String(255), nullable=False) 
